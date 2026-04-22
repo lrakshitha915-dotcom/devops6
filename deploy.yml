@@ -1,10 +1,10 @@
 - name: Deploy Maven Artifact
   hosts: web
-  become: yes
+  become: no
   tasks:
     - name: Copy JAR file
       copy:
-        src: target/maven-example-1.0-SNAPSHOT.jar
+        src: /var/lib/jenkins/workspace/dev8/target/maven-example-1.0-SNAPSHOT.jar
         dest: /opt/maven-example-1.0-SNAPSHOT.jar
 
     - name: Run application
